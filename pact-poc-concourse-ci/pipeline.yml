@@ -1,0 +1,20 @@
+---
+resources:
+  - name: code-repository
+    type: git
+    source:
+      uri: {{git_uri}}
+      branch: {{git_branch}}
+      private_key: {{git_private_key}}
+      ignore_paths:
+        - .gitignore
+        - README.md
+
+jobs:
+
+  # PUBLISH PACT
+  - name: publish-pact
+    plan:
+      - get: code-repository
+      - task: publish-pact
+        file: code-repository/pact-poc-concourse-ci/tasks/publish-pact.yml

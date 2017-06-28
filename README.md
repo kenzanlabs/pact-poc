@@ -21,7 +21,7 @@ JVM Consumers implement PactFragment classes to specify the expectation they hav
 
 ```bash
 cd pact-poc-jvm-consumer/
-./gradlew build
+./gradlew clean build
 ./gradlew pactPublish
 ```
 
