@@ -2,7 +2,7 @@
 
 echo "Navigating to Microservice directory..."
 
-cd microservice-repo/pact-poc-microservice
+cd code-repository/pact-poc-microservice
 
 echo "Building application..."
 

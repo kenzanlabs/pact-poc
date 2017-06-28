@@ -8,10 +8,9 @@ image_resource:
     tag: "8"
 
 inputs:
-  - name: ci-repo
-  - name: microservice-repo
+  - name: code-repository
 
 params:
 
 run:
-  path: ci-repo/pact-poc-concourse-ci/tasks/verify-pacts.sh
+  path: code-repository/pact-poc-concourse-ci/tasks/verify-pacts.sh

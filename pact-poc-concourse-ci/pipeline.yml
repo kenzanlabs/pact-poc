@@ -1,6 +1,6 @@
 ---
 resources:
-  - name: ci-repo
+  - name: code-repository
     type: git
     source:
       uri: {{git_uri}}
@@ -8,37 +8,19 @@ resources:
       ignore_paths:
         - .gitignore
         - README.md
-        - pact-poc-jvm-consumer/src/test/java/*
-        - pact-poc-microservice/src/main/java/*
-  - name: jvm-consumer-repo
-    type: git
-    source:
-      uri: {{git_uri}}
-      branch: {{git_branch}}
-      paths:
-        - pact-poc-jvm-consumer/src/test/java/*
-  - name: microservice-repo
-    type: git
-    source:
-      uri: {{git_uri}}
-      branch: {{git_branch}}
-      paths:
-        - pact-poc-microservice/src/main/java/*
 
 jobs:
 
   # PUBLISH PACT
   - name: publish-pact
     plan:
-      - get: ci-repo
-      - get: jvm-consumer-repo
+      - get: code-repository
       - task: publish-pact
-        file: ci-repo/pact-poc-concourse-ci/tasks/publish-pact.yml
+        file: code-repository/pact-poc-concourse-ci/tasks/publish-pact.yml
 
   # VERIFY PACTS
   - name: verify-pacts
     plan:
-      - get: ci-repo
-      - get: microservice-repo
+      - get: code-repository
       - task: verify-pacts
-        file: ci-repo/pact-poc-concourse-ci/tasks/verify-pacts.yml
+        file: code-repository/pact-poc-concourse-ci/tasks/verify-pacts.yml

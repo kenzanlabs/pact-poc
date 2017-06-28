@@ -8,10 +8,9 @@ image_resource:
     tag: "8"
 
 inputs:
-  - name: ci-repo
-  - name: jvm-consumer-repo
+  - name: code-repository
 
 params:
 
 run:
-  path: ci-repo/pact-poc-concourse-ci/tasks/publish-pact.sh
+  path: code-repository/pact-poc-concourse-ci/tasks/publish-pact.sh
