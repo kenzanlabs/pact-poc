@@ -2,7 +2,7 @@
 
 echo "Navigating to JVM Consumer directory..."
 
-cd code-repository/pact-poc-jvm-consumer
+cd jvm-consumer-repo/pact-poc-jvm-consumer
 
 echo "Building application..."
 
