@@ -12,7 +12,9 @@ echo "Running application in background..."
 
 nohup ./gradlew bootRun >/dev/null 2>&1 &
 
-sleep 10
+echo "Sleeping for 5 seconds to ensure application running..."
+
+sleep 5
 
 echo "Verifying application with Pacts from Pact Broker..."
 
