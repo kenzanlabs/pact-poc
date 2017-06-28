@@ -10,7 +10,7 @@ echo "Building application..."
 
 echo "Running application in background..."
 
-nohup ./gradlew bootRun &
+nohup ./gradlew bootRun >/dev/null 2>&1 &
 
 sleep 10
 
