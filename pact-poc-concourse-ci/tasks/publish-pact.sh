@@ -1,9 +1,13 @@
 #!/bin/bash
 
-echo "Hi"
+echo "Navigating to JVM Consumer directory..."
 
-ls
+cd code-repository/pact-poc-jvm-consumer
 
-cd code-repository/
+echo "Building application..."
 
-ls
+./gradlew clean build
+
+echo "Publishing Pact to Pact Broker..."
+
+./gradlew pactPublish
