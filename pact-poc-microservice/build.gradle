@@ -38,7 +38,7 @@ pact {
 //    publishVerificationResults = true
       // Only load the pacts from the broker if the start tasks from the command line include pactVerify
       if ('pactVerify' in gradle.startParameter.taskNames) {
-        hasPactsFromPactBroker('http://54.208.223.169', authentication: ['Basic', 'shanelee007', 'password123']) { consumer ->
+        hasPactsFromPactBroker('http://ec2-54-174-14-150.compute-1.amazonaws.com', authentication: ['Basic', 'shanelee007', 'password123']) { consumer ->
           stateChange = { providerState -> /* state change code here */ true }
         }
       }

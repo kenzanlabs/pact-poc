@@ -40,7 +40,7 @@ test {
 
 pact {
   publish {
-    pactBrokerUrl = 'http://54.208.223.169'
+    pactBrokerUrl = 'http://ec2-54-174-14-150.compute-1.amazonaws.com'
     pactBrokerUsername = 'shanelee007'
     pactBrokerPassword = 'password123'
     version = '1.0.0'
